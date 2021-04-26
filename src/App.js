@@ -1,9 +1,15 @@
-import './styles/global.css';
+
+
+import Carousel from './components/carousel';
+
+
 import styles from './app.module.css';
 
 function App() {
   return (
-    <h1>fooo</h1>
+    <div className={styles.container}>
+      <Carousel />
+    </div>
   );
 }
 

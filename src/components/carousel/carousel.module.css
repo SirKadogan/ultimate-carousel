@@ -1,0 +1,27 @@
+.carouselContainer {
+  width: 720px;
+  height: 320px;
+  background-color: red;
+  
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.block {
+  height: 100%;
+  width: 200px;
+  background-color: blue;    
+  flex-shrink: 0;
+  
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.block:first-child {
+  margin-left: 0;  
+}
+
+.block:last-child {
+  margin-right: 0;  
+}
