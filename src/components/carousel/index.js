@@ -6,21 +6,12 @@ const Carousel = () => {
     <div className={styles.carouselContainer}>
       <FiChevronLeft className={styles.arrow} />
       <div className={styles.blocksContainer}>
-        <div className={styles.block}>
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(item => (
+          <div className={styles.block}>
+            <h1>{item}</h1>
+          </div>
+        ))}
 
-        </div>
-        <div className={styles.block}>
-
-        </div>
-        <div className={styles.block}>
-
-        </div>
-        <div className={styles.block}>
-
-        </div>
-        <div className={styles.block}>
-
-        </div>
       </div>
 
       <FiChevronRight className={styles.arrow} />
