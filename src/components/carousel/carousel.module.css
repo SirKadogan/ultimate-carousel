@@ -1,4 +1,10 @@
 .carouselContainer {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.blocksContainer {
   width: 720px;
   height: 320px;
   background-color: red;
@@ -24,4 +30,16 @@
 
 .block:last-child {
   margin-right: 0;  
+}
+
+.arrow {
+  font-size: 32px;
+  cursor: pointer;
+}
+.arrow:first-child {
+  margin-right: 15px;
+}
+
+.arrow:last-child {
+  margin-left: 15px;
 }
