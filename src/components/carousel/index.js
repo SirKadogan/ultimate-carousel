@@ -13,6 +13,7 @@ import styles from './carousel.module.css';
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const [prevDisabled, setPrevDisabled] = useState(true);
   const [nextDisabled, setNextDisabled] = useState(false);
@@ -21,6 +22,7 @@ const Carousel = () => {
     async function init() {
       const { data } = await api.get('/projects');
       setProjects(data);
+      setLoading(false);
     }
     init();
   }, [])
@@ -49,6 +51,15 @@ const Carousel = () => {
     } else {
       setCurrentIndex(nextIndex)
     }
+  }
+
+  if (loading) {
+    return (
+      <div className={styles.carouselContainer}>
+        <h1>Loading...</h1>
+      </div>
+    )
+
   }
 
 
