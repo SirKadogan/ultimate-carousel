@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<img src="./src/assets/logo.png" width="200"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Ultimate Carousel - Thales Kenne
 
-## Available Scripts
+Ultimate Carousel is a simple application with a custom built carousel, featuring a 4 block carousel with scroll animations.
 
-In the project directory, you can run:
+### :cd: Technologies and Features
 
-### `yarn start`
+- Reactjs
+- Functional components
+- Json Server
+- CSS Modules
+- Hooks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### :sunglasses: Reasoning behind features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- In normal applications I'd build a custom hook with Context API to fetch the server information, rather than straight inside the component. I just didn't see the point in doing that here since it is a single component.
 
-### `yarn test`
+- I created a local json server to provide the application with a mock backend to simulate an actual request using axios. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- I used CSS modules to decouple each component from each other, since I'm actually more used to Sass. Css  modules at least brought me closer to my comfort zone. Although adding sass would be easy, I chose not to add another layer of "complexity".
 
-### `yarn build`
+- I chose to go for a more artsy vibe with the logo and images. Just adding my "soul" to the project. All the images were generated using a custom endpoint from Unsplash.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- The images displayed in the cards are chosen on the first render and do not change while the app is running. They will be chosen randomly when the component mounts.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The carousel will disable the arrows accordingly when it reaches the beggining/end of contents.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The carousel will only scroll the necessary amount when there are not enough items to fill a 4-item scroll.
 
-### `yarn eject`
+### :exclamation: Known issues
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- I went for hard coded dimensions, since no other feature was requested. Although it should look fine on most pc displays, mobile is not included in this project.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- It is currently fixed to show 4 cards at a time. Further work would be necessary to make that value dynamic.
+### :computer: Instructions to run
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Run `yarn` or `npm install` to install dependencies
+- Run `yarn server` or `npm run server` to start the Json Server at port `:3333`
+- Run `yarn start` or `npm run start` to start the application on port `:3000`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### :camera: Preview
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./src/assets/preview.png" />
