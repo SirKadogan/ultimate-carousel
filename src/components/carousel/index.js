@@ -14,19 +14,23 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [projects, setProjects] = useState([]);
 
+  const [prevDisabled, setPrevDisabled] = useState(true);
+  const [nextDisabled, setNextDisabled] = useState(false);
+
   useEffect(() => {
     async function init() {
       const { data } = await api.get('/projects');
       console.log(data);
       setProjects(data);
     }
-
     init();
   }, [])
 
   const handleBackClick = () => {
+    setNextDisabled(false);
     const nextIndex = currentIndex - 4;
     if (nextIndex <= 0) {
+      setPrevDisabled(true);
       /*only goes back the difference between the negative result and 
       the usual 4 steps*/
       const remainingItems = nextIndex + 4;
@@ -37,8 +41,10 @@ const Carousel = () => {
   }
 
   const handleNextClick = () => {
+    setPrevDisabled(false);
     const nextIndex = currentIndex + 4;
     if ((nextIndex + 4) > items.length) {
+      setNextDisabled(true);
       const remainingItems = items.length - nextIndex;
       setCurrentIndex(currentIndex + remainingItems)
     } else {
@@ -49,7 +55,11 @@ const Carousel = () => {
 
   return (
     <div className={styles.carouselContainer}>
-      <FiChevronLeft className={styles.arrow} onClick={handleBackClick} />
+      <button disabled={prevDisabled} onClick={handleBackClick}>
+        <FiChevronLeft
+          className={styles.arrow}
+        />
+      </button>
 
       <div className={styles.blocksContainer}>
         {projects.map((item, itemIndex) => (
@@ -60,8 +70,9 @@ const Carousel = () => {
         ))}
 
       </div>
-
-      <FiChevronRight className={styles.arrow} onClick={handleNextClick} />
+      <button disabled={nextDisabled} onClick={handleNextClick}>
+        <FiChevronRight className={styles.arrow} />
+      </button>
     </div >
   )
 }

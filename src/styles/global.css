@@ -30,6 +30,11 @@ body, input, textarea,button {
   color: var(--white);
 }
 
+button {
+  cursor: pointer;
+  all: unset;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-family: lexend, sans-serif;
@@ -44,6 +49,6 @@ h2 {
   font-size: 1.5rem;
 }
 
-button {
-  cursor: pointer;
-}
+
+
+

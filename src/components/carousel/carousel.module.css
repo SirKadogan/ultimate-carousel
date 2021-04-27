@@ -42,10 +42,15 @@
   font-size: 32px;
   cursor: pointer;
 }
+
 .arrow:first-child {
   margin-right: 15px;
 }
 
 .arrow:last-child {
   margin-left: 15px;
+}
+
+button:disabled {
+  color: var(--gray-500);
 }
