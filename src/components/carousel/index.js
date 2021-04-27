@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Libraries
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+
+// Services
+import api from '../../services/api';
 
 // Styles
 import styles from './carousel.module.css';
@@ -9,6 +12,17 @@ import styles from './carousel.module.css';
 const Carousel = () => {
   const items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    async function init() {
+      const { data } = await api.get('/projects');
+      console.log(data);
+      setProjects(data);
+    }
+
+    init();
+  }, [])
 
   const handleBackClick = () => {
     const nextIndex = currentIndex - 4;
@@ -38,10 +52,10 @@ const Carousel = () => {
       <FiChevronLeft className={styles.arrow} onClick={handleBackClick} />
 
       <div className={styles.blocksContainer}>
-        {items.map((item, itemIndex) => (
+        {projects.map((item, itemIndex) => (
           <div className={styles.block} style={{ left: 250 * (itemIndex - currentIndex) }}
           >
-            <h1>{item}</h1>
+            <h1>{item.title}</h1>
           </div>
         ))}
 
