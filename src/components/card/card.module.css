@@ -19,6 +19,10 @@
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .cardContent img {
   border-radius: 5px 5px 0 0 ;
   height: 240px;
