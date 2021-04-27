@@ -1,0 +1,49 @@
+.card {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  flex-shrink: 0;
+
+  transition: 1s;
+  
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.cardContent img {
+  border-radius: 5px 5px 0 0 ;
+  height: 240px;
+}
+
+
+
+.cardBody h2{
+  color: var(--gray-800);
+}
+
+.cardBody {
+  color: var(--gray-800);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 5px;
+}
+
+
+
+.card:first-child {
+  padding-left: 0;  
+}
+
+.card:last-child {
+  padding-right: 0;  
+}

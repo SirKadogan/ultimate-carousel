@@ -5,6 +5,7 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 // Services
 import api from '../../services/api';
+import Card from '../card';
 
 // Styles
 import styles from './carousel.module.css';
@@ -61,10 +62,7 @@ const Carousel = () => {
 
       <div className={styles.blocksContainer}>
         {projects.map((item, itemIndex) => (
-          <div className={styles.block} style={{ left: 250 * (itemIndex - currentIndex) }}
-          >
-            <h1>{item.title}</h1>
-          </div>
+          <Card item={item} style={{ left: 250 * (itemIndex - currentIndex) }} />
         ))}
 
       </div>

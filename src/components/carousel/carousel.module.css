@@ -7,35 +7,11 @@
 .blocksContainer {
   width: 1000px;
   height: 320px;
-  background-color: red;
   position: relative;
   
   overflow: hidden;
   display: flex;
   flex-direction: row;
-}
-
-.block {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 250px;
-  background-color: blue;    
-  flex-shrink: 0;
-
-  transition: 1s;
-  
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-
-.block:first-child {
-  padding-left: 0;  
-}
-
-.block:last-child {
-  padding-right: 0;  
 }
 
 .arrow {
