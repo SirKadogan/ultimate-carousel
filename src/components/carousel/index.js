@@ -10,7 +10,6 @@ import api from '../../services/api';
 import styles from './carousel.module.css';
 
 const Carousel = () => {
-  const items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [projects, setProjects] = useState([]);
 
@@ -20,7 +19,6 @@ const Carousel = () => {
   useEffect(() => {
     async function init() {
       const { data } = await api.get('/projects');
-      console.log(data);
       setProjects(data);
     }
     init();
@@ -43,9 +41,9 @@ const Carousel = () => {
   const handleNextClick = () => {
     setPrevDisabled(false);
     const nextIndex = currentIndex + 4;
-    if ((nextIndex + 4) > items.length) {
+    if ((nextIndex + 4) >= projects.length) {
       setNextDisabled(true);
-      const remainingItems = items.length - nextIndex;
+      const remainingItems = projects.length - nextIndex;
       setCurrentIndex(currentIndex + remainingItems)
     } else {
       setCurrentIndex(nextIndex)
